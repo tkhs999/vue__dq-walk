@@ -1,0 +1,334 @@
+@charset "UTF-8";
+body {
+  color: #333;
+  background: #4181c4;
+  padding: 30px;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  word-wrap: break-word;
+  -webkit-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-size: 16px;
+}
+
+#app {
+  border: 6px solid #306eaf;
+  background: #fff;
+  padding: 2em;
+  max-width: 720px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+#app h2 {
+  font-size: 2.2em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #306eaf;
+  color: #306eaf;
+}
+
+#app h2 span {
+  display: block;
+}
+
+#app h2 .sub {
+  font-size: 0.62em;
+  margin-bottom: -0.5em;
+}
+
+#app .app-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#app .app-main .graphic-wrap {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .app-main .graphic {
+  background: #deebf9;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+#app .app-main .graphic .chara {
+  background: url(img/character-sprite.png) no-repeat top center;
+  background-size: cover;
+  -webkit-animation: anm-chara 1600ms steps(3) infinite;
+          animation: anm-chara 1600ms steps(3) infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  width: 220px;
+  height: 220px;
+  top: calc(50% - 110px);
+  left: calc(50% - 110px);
+  position: absolute;
+  z-index: 2;
+}
+
+#app .app-main .graphic .box-top, #app .app-main .graphic .box-bottom, #app .app-main .graphic .box-top2, #app .app-main .graphic .box-bottom2 {
+  background: url(img/box.png) repeat-x top center;
+  background-size: contain;
+  width: 100%;
+  height: 66px;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+#app .app-main .graphic .box-top {
+  top: -80px;
+  -webkit-animation: anm-box 1600ms infinite;
+          animation: anm-box 1600ms infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#app .app-main .graphic .box-bottom {
+  bottom: -80px;
+  -webkit-animation: anm-box2 1600ms infinite;
+          animation: anm-box2 1600ms infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#app .app-main .graphic .box-top2 {
+  top: -80px;
+  -webkit-animation: anm-box2 1600ms infinite;
+          animation: anm-box2 1600ms infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#app .app-main .graphic .box-bottom2 {
+  bottom: -80px;
+  -webkit-animation: anm-box 1600ms infinite;
+          animation: anm-box 1600ms infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#app .app-main .graphic .charaLevelClass-0 .chara {
+  -webkit-animation: anm-chara 1600ms steps(3) infinite;
+          animation: anm-chara 1600ms steps(3) infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  width: 220px;
+  height: 220px;
+  top: calc(50% - 110px);
+  left: calc(50% - 110px);
+}
+
+#app .app-main .graphic .charaLevelClass-0 .box-top {
+  top: -80px;
+}
+
+#app .app-main .graphic .charaLevelClass-0 .box-bottom {
+  bottom: -80px;
+}
+
+#app .app-main .graphic .charaLevelClass-0 .box-top2 {
+  top: -80px;
+}
+
+#app .app-main .graphic .charaLevelClass-0 .box-bottom2 {
+  bottom: -80px;
+}
+
+#app .app-main .graphic .charaLevelClass-1 .chara {
+  -webkit-animation: anm-chara 800ms steps(3) infinite;
+          animation: anm-chara 800ms steps(3) infinite;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  width: 200px;
+  height: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+
+#app .app-main .graphic .charaLevelClass-1 .box-top {
+  top: -16px;
+}
+
+#app .app-main .graphic .charaLevelClass-1 .box-bottom {
+  bottom: -16px;
+}
+
+#app .app-main .graphic .charaLevelClass-1 .box-top2 {
+  top: -80px;
+}
+
+#app .app-main .graphic .charaLevelClass-1 .box-bottom2 {
+  bottom: -80px;
+}
+
+#app .app-main .graphic .charaLevelClass-2 .chara {
+  -webkit-animation: anm-chara 400ms steps(3) infinite;
+          animation: anm-chara 400ms steps(3) infinite;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  width: 160px;
+  height: 160px;
+  top: calc(50% - 80px);
+  left: calc(50% - 80px);
+}
+
+#app .app-main .graphic .charaLevelClass-2 .box-top {
+  top: 32px;
+}
+
+#app .app-main .graphic .charaLevelClass-2 .box-bottom {
+  bottom: 32px;
+}
+
+#app .app-main .graphic .charaLevelClass-2 .box-top2 {
+  top: -14px;
+}
+
+#app .app-main .graphic .charaLevelClass-2 .box-bottom2 {
+  bottom: -14px;
+}
+
+#app .app-main .graphic .charaLevelClass-3 .chara {
+  -webkit-animation: anm-chara 100ms steps(3) infinite;
+          animation: anm-chara 100ms steps(3) infinite;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  width: 160px;
+  height: 160px;
+  top: calc(50% - 80px);
+  left: calc(50% - 80px);
+}
+
+#app .app-main .graphic .charaLevelClass-3 .box-top {
+  top: 32px;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#app .app-main .graphic .charaLevelClass-3 .box-bottom {
+  bottom: 32px;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#app .app-main .graphic .charaLevelClass-3 .box-top2 {
+  top: -14px;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#app .app-main .graphic .charaLevelClass-3 .box-bottom2 {
+  bottom: -14px;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#app .app-main ul {
+  width: 50%;
+}
+
+#app .app-main ul li {
+  width: 100%;
+  height: 48px;
+  margin-bottom: 1em;
+}
+
+#app .app-main ul li input[type="text"] {
+  border: 2px solid #4181c4;
+  padding: 0 0.5em;
+  border-radius: 4px 0 0 4px;
+  height: 48px;
+  width: 65%;
+}
+
+#app .app-main ul li p {
+  display: inline-block;
+  background: #4181c4;
+  color: #fff;
+  height: 48px;
+  line-height: 48px;
+  width: 35%;
+  text-align: center;
+  border-radius: 0 4px 4px 0;
+}
+
+#app .app-main ul li:last-child {
+  margin-bottom: 0;
+}
+
+@-webkit-keyframes anm-chara {
+  from {
+    background-position: 0 top;
+  }
+  to {
+    background-position: 0 bottom;
+  }
+}
+
+@keyframes anm-chara {
+  from {
+    background-position: 0 top;
+  }
+  to {
+    background-position: 0 bottom;
+  }
+}
+
+@-webkit-keyframes anm-box {
+  from {
+    background-position: 0 top;
+  }
+  to {
+    background-position: 108px bottom;
+  }
+}
+
+@keyframes anm-box {
+  from {
+    background-position: 0 top;
+  }
+  to {
+    background-position: 108px bottom;
+  }
+}
+
+@-webkit-keyframes anm-box2 {
+  from {
+    background-position: 0 top;
+  }
+  to {
+    background-position: -108px bottom;
+  }
+}
+
+@keyframes anm-box2 {
+  from {
+    background-position: 0 top;
+  }
+  to {
+    background-position: -108px bottom;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,192 @@
+// main
+
+body
+  color: #333
+  background: #4181c4
+  padding: 30px
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif
+  font-weight: 400
+  line-height: 1.5
+  word-wrap: break-word
+  font-feature-settings: "kern"
+  font-kerning: normal
+  font-size: 16px
+  
+#app
+  border: 6px solid #306eaf
+  background: #fff
+  padding: 2em
+  max-width: 720px
+  margin: auto
+  border-radius: 4px
+  h2
+    font-size: 2.2em
+    margin-bottom: 1em
+    padding-bottom: 0.5em
+    border-bottom: 2px solid #306eaf
+    color: #306eaf
+    span
+      display: block
+    .sub
+      font-size: 0.62em
+      margin-bottom: -0.5em
+  .app-main
+    display: flex
+    .graphic-wrap
+      width: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+    .graphic
+      background: #deebf9
+      width: 240px
+      height: 240px
+      border-radius: 50%
+      overflow: hidden
+      position: relative
+      .chara
+        background: url(img/character-sprite.png) no-repeat top center
+        background-size: cover
+        animation: anm-chara 1600ms steps(3) infinite
+        animation-play-state: paused
+        width: 220px
+        height: 220px
+        top: calc(50% - 110px)
+        left: calc(50% - 110px)
+        position: absolute
+        z-index: 2
+      .box-top,.box-bottom,.box-top2,.box-bottom2
+        background: url(img/box.png) repeat-x top center
+        background-size: contain
+        width: 100%
+        height: 66px
+        position: absolute
+        left: 0
+        z-index: 1
+        transition: all 1s ease-out
+      .box-top
+        top: -80px
+        animation: anm-box 1600ms infinite
+        animation-play-state: paused
+      .box-bottom
+        bottom: -80px
+        animation: anm-box2 1600ms infinite
+        animation-play-state: paused
+      .box-top2
+        top: -80px
+        animation: anm-box2 1600ms infinite
+        animation-play-state: paused
+      .box-bottom2
+        bottom: -80px
+        animation: anm-box 1600ms infinite
+        animation-play-state: paused
+    .graphic .charaLevelClass-0
+      .chara
+        animation: anm-chara 1600ms steps(3) infinite
+        animation-play-state: paused
+        transition: all 1s ease-out
+        width: 220px
+        height: 220px
+        top: calc(50% - 110px)
+        left: calc(50% - 110px)
+      .box-top
+        top: -80px
+      .box-bottom
+        bottom: -80px
+      .box-top2
+        top: -80px
+      .box-bottom2
+        bottom: -80px
+    .graphic .charaLevelClass-1
+      .chara
+        animation: anm-chara 800ms steps(3) infinite
+        transition: all 1s ease-out
+        width: 200px
+        height: 200px
+        top: calc(50% - 100px)
+        left: calc(50% - 100px)
+      .box-top
+        top: -16px
+      .box-bottom
+        bottom: -16px
+      .box-top2
+        top: -80px
+      .box-bottom2
+        bottom: -80px
+    .graphic .charaLevelClass-2
+      .chara
+        animation: anm-chara 400ms steps(3) infinite
+        transition: all 1s ease-out
+        width: 160px
+        height: 160px
+        top: calc(50% - 80px)
+        left: calc(50% - 80px)
+      .box-top
+        top: 32px
+      .box-bottom
+        bottom: 32px
+      .box-top2
+        top: -14px
+      .box-bottom2
+        bottom: -14px
+    .graphic .charaLevelClass-3
+      .chara
+        animation: anm-chara 100ms steps(3) infinite
+        transition: all 1s ease-out
+        width: 160px
+        height: 160px
+        top: calc(50% - 80px)
+        left: calc(50% - 80px)
+      .box-top
+        top: 32px
+        animation-play-state: running
+      .box-bottom
+        bottom: 32px
+        animation-play-state: running
+      .box-top2
+        top: -14px
+        animation-play-state: running
+      .box-bottom2
+        bottom: -14px
+        animation-play-state: running
+    ul
+      width: 50%
+      li
+        width: 100%
+        height: 48px
+        margin-bottom: 1em
+        input[type="text"]
+          border: 2px solid #4181c4
+          padding: 0 0.5em
+          border-radius: 4px 0 0 4px
+          height: 48px
+          width: 65%
+        p
+          display: inline-block
+          background: #4181c4
+          color: #fff
+          height: 48px
+          line-height: 48px
+          width: 35%
+          text-align: center
+          border-radius: 0 4px 4px 0
+      li:last-child
+        margin-bottom: 0
+
+@keyframes anm-chara
+  from
+    background-position: 0 top
+  to
+    background-position: 0 bottom
+
+@keyframes anm-box
+  from
+    background-position: 0 top
+  to
+    background-position: 108px bottom
+
+@keyframes anm-box2
+  from
+    background-position: 0 top
+  to
+    background-position: -108px bottom

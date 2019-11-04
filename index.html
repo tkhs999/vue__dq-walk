@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="libs/reset.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="app">
+            <h2>
+                <span class="sub">ドラクエウォーク</span>
+                <soan class="main">CALCULATOR</soan>
+            </h2>
+            <div class="app-main">
+                <div class="graphic-wrap">
+                    <div class="graphic">
+                        <div v-bind:class="charaLevelClass">
+                            <div class="chara"></div>
+                            <div class="box-top"></div>
+                            <div class="box-top2"></div>
+                            <div class="box-bottom"></div>
+                            <div class="box-bottom2"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li class="step">
+                        <input type="text" v-model:value="step"><p>歩</p>
+                    </li>
+                    <li class="point">
+                        <input type="text" v-model:value="point"><p>ポイント</p>
+                    </li>
+                    <li class="gacha">
+                        <input type="text" v-model:value="gacha"><p>ガチャ</p>
+                    </li>
+                    <li>
+                        <div>1回引く？ 10回？ それとも100回？</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+var app = new Vue({
+    el: '#app',
+        data: () => ({
+        step: 0,
+        point: 0,
+        gacha: 0,
+        gachaLevel: 0,
+        charaLevelClass: ""
+        }),
+        watch: {
+        step: function (value) {
+            this.point = value * 0.04
+            this.gachaLevel = Math.floor(this.gacha)
+            if(this.gachaLevel < 1){
+            this.charaLevelClass = "charaLevelClass-0"
+            }else if(this.gachaLevel < 10){
+            this.charaLevelClass = "charaLevelClass-1"
+            }else if(this.gachaLevel < 100){
+            this.charaLevelClass = "charaLevelClass-2"
+            }else{
+            this.charaLevelClass = "charaLevelClass-3"
+            }
+        },
+        point: function (value) {
+            this.step = value * 25
+            this.gacha = value * 0.001
+        },
+        gacha: function (value) {
+            this.point = value * 1000
+        }
+        }
+})
+</script>
+</body>
+</html>
